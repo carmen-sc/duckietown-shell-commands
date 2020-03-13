@@ -79,6 +79,14 @@ class DTCommand(DTCommandAbs):
             default=False,
             help="Run the demo on this machine",
         )
+        
+        parser.add_argument(
+            "--gpus",
+            dest="local",
+            action="store_true",
+            default=False,
+            help="Enables container GPU access on NVIDIA boards, must be run on Docker 19.03 or higher to work, use argument 'all' to allow access to all GPU functions (recommended)",
+        )
 
         parsed = parser.parse_args(args)
 
